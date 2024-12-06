@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    font-family: 'Roboto Slab';
+    color: #005f73;
+    background-color: #e0f7fa; 
+    width : 100%;
+    height : 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height : 10vh;
+    background-color: #80d0f0;
+}
+
+.container-logo {
+    display: flex;
+    justify-items: center;
+}
+
+.logo {
+    width: 50px;
+}
+
+.title-header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: calc(100vh - 120px); 
+    overflow: hidden; 
+    width: 100%;
+}
+
+.human-body {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    opacity : 0.8;
+}
+
+.map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.planisphere {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+    transition: transform 1s ease-in-out, opacity 1s ease;
+}
+
+.infobubble {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: none;
+    z-index: 2;
+}
+
+.infobubble input {
+    margin-top: 10px;
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #005f73;
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height : 10vh;
+    background-color: #F5F5F5;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.container .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.legal {
+    margin-right: auto;
+}
+
+.legal a {
+    text-decoration: none;
+    color: #80d0f0;
+}
+
+
+#return-button {
+    position: absolute;
+    bottom: 20px; /* Placer le bouton en bas de l'écran */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #80d0f0;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 2;
+    display: none;
+}
+
+.zone {
+    position: absolute;
+    background-color: rgba(0, 255, 0, 0.5); /* Zone cliquable avec un fond semi-transparent */
+    cursor: pointer;
+}
+
+.zone-clic {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0); /* Zone invisible mais cliquable */
+    border: 2px solid red; /* Juste pour le test, tu peux l'enlever ou le modifier */
+    cursor: pointer;
+}
+
+.zone-clic:hover {
+    border-color: blue; /* Changer la couleur au survol */
+}
+
+.legend {
+    margin-top: 20px;
+}
+
+.legend h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.legend ul {
+    list-style-type: none;
+}
+
+.legend li {
+    margin: 10px 0;
+}
+
+.legend a {
+    text-decoration: none;
+    color: #008CBA;
+    font-size: 1.2em;
+}
+
+.legend a:hover {
+    text-decoration: underline;
+}
+
+#reins {
+    background-color : blue;
+    opacity : 0.4;
+    border: solid 2px black;
+    border-radius : 70%;
+}
+
+#head {
+    background-color : yellow;
+    opacity : 0.4;
+    border: solid 2px black;
+    border-radius : 70%;
+}
+
+#heart {
+    background-color : lightgreen;
+    opacity : 0.5;
+    border: solid 2px black;
+    border-radius : 70%;
+}
+
+#lungs {
+    background-color : orange;
+    opacity : 0.4;
+    border: solid 2px black;
+    border-radius : 70%;
+}
+
+
+#infobubble {
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-with-blanks {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.blank {
+    border-bottom: 2px dashed #000;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.drag-boxes {
+    margin-top: 10px;
+}
+
+.drag-box {
+    padding: 5px 15px;
+    margin-right: 10px;
+    background-color: #FF5733;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}   
+
+#audio-player-container {
+    position: fixed;
+    bottom: 100px; /* Ajuste cette valeur selon l'espacement entre le lecteur et le footer */
+    right: 20px;   /* Distance du bord droit de la page */
+    z-index: 9999; /* Pour qu'il soit au-dessus des autres éléments */
+}
+
+#audio-player-container audio {
+    width: 200px; /* Ajuste la largeur du lecteur audio */
+    border-radius: 8px; /* Facultatif : pour arrondir les coins */
+}
